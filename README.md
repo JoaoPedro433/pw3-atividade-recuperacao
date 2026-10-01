@@ -109,7 +109,7 @@ O resultado deverá indicar:
 * lucas
 ```
 
-Altere o arquivo `nome.md` com o nome do integrante.
+Altere o arquivo `joao.md` com o nome do integrante.
 
 > [!IMPORTANT]
 > ### Regra Obrigatória de Avaliação
