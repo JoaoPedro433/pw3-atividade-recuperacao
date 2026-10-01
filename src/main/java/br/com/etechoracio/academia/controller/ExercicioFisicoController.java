@@ -39,4 +39,12 @@ public class ExercicioFisicoController {
 
         return ResponseEntity.status(HttpStatus.CREATED).body(exercicio);
     }
+
+    @PatchMapping("/alterar-aprovacao/{id}")
+    public ResponseEntity<ExercicioFisicoResponse>  alterarAprovacao(@PathVariable Long id) {
+
+        var exercicio = exercicioFisicoService.atualizarExercicioFisico(id);
+
+        return ResponseEntity.ok(exercicio);
+    }
 }

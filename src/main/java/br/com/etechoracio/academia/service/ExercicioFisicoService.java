@@ -46,4 +46,18 @@ public class ExercicioFisicoService {
         return exercicioFisicoMapper.entityToDto(exercicioFisicoCriado);
 
     }
+
+    public ExercicioFisicoResponse atualizarExercicioFisico(Long id) {
+
+        ExercicioFisico exercicioFisico = exercicioFisicoRepository.findById(id)
+                                        .orElseThrow(() -> new ResponseStatusException(
+                                                            HttpStatus.NOT_FOUND,
+                                                            ("Exercício aprovado não encontrado")));
+
+        exercicioFisico.setAprovado(true);
+
+        var exercicioAlterado = exercicioFisicoRepository.save(exercicioFisico);
+
+        return exercicioFisicoMapper.entityToDto(exercicioAlterado);
+    }
 }
