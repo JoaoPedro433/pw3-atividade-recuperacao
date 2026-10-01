@@ -1,5 +1,6 @@
 package br.com.etechoracio.academia.service;
 
+import br.com.etechoracio.academia.dto.ExercicioFisicoRequest;
 import br.com.etechoracio.academia.dto.ExercicioFisicoResponse;
 import br.com.etechoracio.academia.entity.ExercicioFisico;
 import br.com.etechoracio.academia.mapper.ExercicioFisicoMapper;
@@ -35,5 +36,14 @@ public class ExercicioFisicoService {
                                                                                         ("Exercício aprovado não encontrado")));
 
         return exercicioFisicoMapper.entityToDto(exercicioAprovadoIndividual);
+    }
+
+    public ExercicioFisicoResponse criarExercicioFisico(ExercicioFisicoRequest request) {
+        ExercicioFisico exercicio = exercicioFisicoMapper.dtoToEntity(request);
+
+        ExercicioFisico exercicioFisicoCriado = exercicioFisicoRepository.save(exercicio);
+
+        return exercicioFisicoMapper.entityToDto(exercicioFisicoCriado);
+
     }
 }

@@ -15,4 +15,5 @@ public interface ExercicioFisicoMapper {
     ExercicioFisicoResponse entityToDto(ExercicioFisico exercicioFisico);
 
     List<ExercicioFisicoResponse> entityToDto(List<ExercicioFisico> exercicios);
+
 }
